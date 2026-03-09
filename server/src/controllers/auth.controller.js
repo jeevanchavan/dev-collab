@@ -44,6 +44,7 @@ export const registerUser = async (req,res)=>{
             id:user._id,
             username:user.username,
             email:user.email,
+            role:user.role,
             createdAt:user.createdAt
         }
     })
@@ -100,7 +101,7 @@ export const getMeUser = async (req,res)=>{
     const user = await userModel.findById(req.user.id)
 
     if(!user){
-        res.status(404).json({
+        return res.status(404).json({
             message:"user not found"
         })
     }

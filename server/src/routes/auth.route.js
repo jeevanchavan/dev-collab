@@ -6,7 +6,7 @@ const authRouter = express.Router()
 
 authRouter.post("/register",registerUser)
 authRouter.post("/login",loginUser)
-authRouter.get('/get-me',authMiddleware,getMeUser)
+authRouter.get('/profile',authMiddleware,getMeUser)
 authRouter.get("/logout",logoutUser)
 
 export default authRouter
